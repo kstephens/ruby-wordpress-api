@@ -7,6 +7,10 @@ describe "Rubypress" do
   end
 
   it 'can connect' do
+   # stub_request(:post, /xmlrpc.php$/).
+   #     with {|req| req.body =~ /admin_user/}.
+   #     to_return(:status => 200, :body => "", :headers => {})
+
     init_wp_admin_connection.class.should == Rubypress::Client
     init_wp_admin_connection.connection.class.should == XMLRPC::Client
 
