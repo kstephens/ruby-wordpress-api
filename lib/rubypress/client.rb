@@ -47,6 +47,20 @@ module Rubypress
         opts[:options]
       )
     end
+    
+    def get_users_blogs(options = {})
+      opts = {
+        :blog_id => 0,
+        :username => self.username,
+        :password => self.password,
+        :options => []
+      }.merge(options)
+      self.connection.call(
+        "wp.getUsersBlogs", 
+        opts[:username],
+        opts[:password]
+      )
+    end    
 
     # FIXME: add tests
     def recent_posts(options = {})
